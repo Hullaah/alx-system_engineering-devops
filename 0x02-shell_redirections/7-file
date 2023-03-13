@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(touch "\*\\\'\"\Best School\"\\'\\\*$\?\*\*\*\*\*:\\)"$'\nBack School')
+echo $(touch "\*\\\'\"\Best School\"\\'\\\*$\?\*\*\*\*\*:\\)"$'\nBest School')
