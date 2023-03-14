@@ -1,2 +1,2 @@
 #!/bin/bash
- printf "%x" $DECIMAl
+ printf "%x" $DECIMAL
