@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# list=$(ls) 
-
+# displays the time for 12 hours and 59 minutes:
 for i in *; do
     echo "$i" | cut -d - -f 2
 done
