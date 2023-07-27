@@ -3,9 +3,9 @@
 i=0
 while ((i < 20)); do
     case "$i" in
-        3) echo "bad luck from China" ;;
-        8) echo "bad luck from Japan" ;;
-        16) echo "bad luck from Italy" ;;
+        3) echo -e "4\nbad luck from China" ;;
+        8) echo -e "9\nbad luck from Japan" ;;
+        16) echo -e "17\nbad luck from Italy" ;;
         *) echo "Best School" ;;
     esac
     ((i++))
