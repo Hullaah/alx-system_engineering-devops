@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
 # works like task 100 but a modified version
+exit_and_cleanup() {
+    if [ -n "$1" ]; then
+        echo "I hate the kill command"
+    fi
+    sudo rm -rf /var/run/myscript.pid
+    exit
+}
 sudo touch /var/run/myscript.pid
 echo $$ >> /var/run/myscript.pid
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'exit_and_cleanup "SIGTERM"' SIGTERM
+trap 'exit_and_cleanup' SIGQUIT
 while true; do
     echo "To infinity and beyond"
+    sleep 2
 done
