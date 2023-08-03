@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# changes the facebook and localhost ip address on a system
+sudo sed -i s/127.0.0.1/127.0.0.2/ /etc/hosts
+echo -e "facebook.com\t8.8.8.8" | sudo  tee -a /etc/hosts
