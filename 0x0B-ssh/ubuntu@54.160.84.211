@@ -2,5 +2,5 @@
 file {'/etc/ssh/ssh_config':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
-  content => "Host *\n\tIdentityFile ~/.ssh/school\n\tPasswordAuthentication no"
+  content => "Host 54.160.84.211\n\tIdentityFile /home/ubuntu/.ssh/school\n\tPasswordAuthentication no"
 }
