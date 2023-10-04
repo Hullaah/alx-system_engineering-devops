@@ -11,4 +11,4 @@ sed -i 's/#error_page 404/error_page 404/' /etc/nginx/sites-available/default
 sed -i '/error_page 404/i \\n        location = /404.html {\n            root /usr/share/nginx/html;\n            internal;\n        }\n' /etc/nginx/sites-available/default
 sed -i '/location = \/404.html {/a \            return 404 "\nCeci n'\''est pas une page\n";\n' /etc/nginx/sites-available/default
 service nginx start
-sudo service nginx restart
+service nginx restart
