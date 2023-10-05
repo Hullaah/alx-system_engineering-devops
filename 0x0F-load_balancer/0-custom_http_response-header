@@ -8,4 +8,6 @@ echo 'Hello World!' | sudo tee /var/www/html/index.html > /dev/null
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
 sudo sed -i "s/server_name _;/server_name _;\n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}/" /etc/nginx/sites-available/default
 sudo sed -i "s/root \/var\/www\/html;/root \/var\/www\/html;\n\terror_page 404 \/404.html;/" /etc/nginx/sites-available/default
+# shellcheck disable=SC2154
+sudo sed -i "/server_name _;/a\n\tadd_header X-Served-By $hostname;" /etc/nginx/sites-enabled/default
 sudo service nginx restart
