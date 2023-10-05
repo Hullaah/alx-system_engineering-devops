@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 # A script that installs nginx on your server
-apt-get update -y
-apt-get install -y nginx
-ufw allow 'Nginx HTTP'
-service nginx start
-echo 'Hello World!' > /var/www/html/index.html
-sed -i '/server_name _;/a \\n    location /redirect_me/ {\n        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n    }\n' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-sed -i 's/#error_page 404/error_page 404/' /etc/nginx/sites-available/default
-sed -i '/error_page 404/i \\n        location = /404.html {\n            root /var/www/html/404.html;\n            internal;\n        }\n' /etc/nginx/sites-available/default
-sed -i '/location = \/404.html {/a \            return 404 "\nCeci n'\''est pas une page\n";\n' /etc/nginx/sites-available/default
-service nginx start
-service nginx restart
+sudo apt-get update -y
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+sudo service nginx start
+echo 'Hello World!' | sudo tee /var/www/html/index.html > /dev/null
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
+sudo sed -i "s/server_name _;/server_name _;\n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}/" /etc/nginx/sites-available/default
+sudo sed -i "s/root \/var\/www\/html;/root \/var\/www\/html;\n\terror_page 404 \/404.html;/" /etc/nginx/sites-available/default
+sudo service nginx restart
