@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 # install load balancer with round robin
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get install -y --no-install-recommends software-properties-common
-yes enter | sudo add-apt-repository ppa:vbernat/haproxy-2.8
-sudo apt-get install -y haproxy=2.8.\*
+yes enter | sudo add-apt-repository ppa:vbernat/haproxy-1.8
+sudo apt-get install -y haproxy
 sudo service haproxy start
-cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.copy
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.copy
 # Configure HAProxy
-cat <<EOF | sudo tee -a /etc/haproxy/haproxy.cfg
+cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg
 frontend http_front
     bind *:80
-    stats uri /haproxy?stats
     default_backend http_back
 
 backend http_back
@@ -18,5 +17,4 @@ backend http_back
     server 183519-web-01 54.160.84.211:80 check
     server 183519-web-02 54.172.244.75:80 check
 EOF
-sudo service rsyslog restart
 sudo service haproxy restart
