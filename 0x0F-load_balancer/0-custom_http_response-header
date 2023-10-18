@@ -11,3 +11,4 @@ sudo sed -i "s/root \/var\/www\/html;/root \/var\/www\/html;\n\terror_page 404 \
 # shellcheck disable=SC2154
 sudo sed -i '/server_name _;/a \\n\tadd_header X-Served-By $hostname;' /etc/nginx/sites-enabled/default
 sudo service nginx restart
+git p
