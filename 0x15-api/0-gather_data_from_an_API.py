@@ -19,7 +19,7 @@ def main():
     print(
         f"Employee {employee['name']} is done with tasks({completed_todos}" +
         f"/{total_todos}):", end="\n\t")
-    print("\n\t".join([x["title"] for x in employee_todos]))
+    print("\n\t ".join([x["title"] for x in employee_todos]))
 
 
 if __name__ == "__main__":
