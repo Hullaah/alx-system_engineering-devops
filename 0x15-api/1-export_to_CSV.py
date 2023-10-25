@@ -20,7 +20,7 @@ def main():
         for employee_todo in employee_todos:
             x = [
                 employee["id"],
-                employee["name"],
+                employee["username"],
                 employee_todo["completed"],
                 employee_todo["title"]
             ]

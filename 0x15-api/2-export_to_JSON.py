@@ -21,7 +21,7 @@ def main():
             x[f"{employee['id']}"].append({
                 "task": employee_todo["title"],
                 "completed": employee_todo["completed"],
-                "username": employee["name"],
+                "username": employee["username"],
             })
         json.dump(x, file)
 

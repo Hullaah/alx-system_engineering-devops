@@ -22,7 +22,7 @@ def main():
                 x = {
                     "task": employee_todo["title"],
                     "completed": employee_todo["completed"],
-                    "username": employee["name"],
+                    "username": employee["username"],
                 }
                 if f"{employee['id']}" in json_file_content:
                     json_file_content[f"{employee['id']}"].append(x)
