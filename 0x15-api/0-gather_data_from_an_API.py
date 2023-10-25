@@ -16,8 +16,8 @@ def main():
     completed_todos = [x for x in employee_todos if x["completed"]]
     total_todos = len(employee_todos)
     print(
-        f"Employee {employee['name']} is done with tasks({len(completed_todos)}" +
-        f"/{total_todos}):", end="\n\t")
+        f"Employee {employee['name']} is done with tasks" +
+        f"({len(completed_todos)}/{total_todos}):", end="\n\t ")
     print("\n\t ".join([x["title"] for x in completed_todos]))
 
 
