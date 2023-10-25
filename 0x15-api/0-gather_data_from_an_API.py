@@ -13,13 +13,12 @@ def main():
         f"https://jsonplaceholder.typicode.com/todos", params=payload)
     employee = req1.json()
     employee_todos = req2.json()
-    completed_todos = len([x["completed"]
-                           for x in employee_todos if x["completed"]])
+    completed_todos = [x for x in employee_todos if x["completed"]]
     total_todos = len(employee_todos)
     print(
-        f"Employee {employee['name']} is done with tasks({completed_todos}" +
+        f"Employee {employee['name']} is done with tasks({len(completed_todos)}" +
         f"/{total_todos}):", end="\n\t")
-    print("\n\t ".join([x["title"] for x in employee_todos]))
+    print("\n\t ".join([x["title"] for x in completed_todos]))
 
 
 if __name__ == "__main__":
