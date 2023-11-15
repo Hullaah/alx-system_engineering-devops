@@ -1,6 +1,6 @@
 # 0x00-shell_basics
 
- This is the directory for project 0x00-shell_basics. It is part of the project to learn about devops.
+This is the directory for project 0x00-shell_basics. It was part of the project done during the ALX software enginerring programme to learn about devops.
 Some of the tasks included in the project are:
 
 ## 0-current_working_directory
