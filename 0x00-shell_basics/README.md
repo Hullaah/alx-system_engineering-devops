@@ -4,24 +4,29 @@ This is the directory for project 0x00-shell_basics. It was part of the project 
 Some of the tasks included in the project are:
 
 ## 0-current_working_directory
+
 File: [0-current_working_directory](0-current_working_directory)
 
 - This task involves writing a script that prints the absolute pathname of the current working directory.
 - I used the ```pwd``` command for the task.
 
 It works this way:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ ./0-current_working_directory 
 /home/hullaah/Documents/ALX/alx-system_engineering-devops/0x00-shell_basics
 [hullaah@fedora 0x00-shell_basics]$
 ```
+
 ## 1-listit
+
 File: [1-listit](1-listit)
 
 - This task involves writing a script that displays the contents list of your current directory
 - I used the ```ls``` command for the task.
 
 It works this way:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ ./1-listit 
 0-current_working_directory  102-tree    11-lists          14-copy_html     3-listfiles           6-firstdirectory  9-firstdirdeletion
@@ -29,29 +34,39 @@ It works this way:
 101-clean_emacs              10-back     13-symbolic_link  2-bring_me_home  5-listfilesdigitonly  8-firstdelete     school.mgc
 [hullaah@fedora 0x00-shell_basics]$ 
 ```
+
 ## 2-bring_me_home
+
 File: [2-bring_me_home](2-bring_me_home)
+
 - This task involves writing a script that changes the working directory to the current user's home directory.
 - The requirements was not to use any shell variables
 - I used the command ```cd ~```
 - ```~``` expands to the current user's home directory. You can confirm by using this command in your shell:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ echo ~
 /home/hullaah
 [hullaah@fedora 0x00-shell_basics]$ 
 ```
+
 You can test it with:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ source ./2-bring_me_home 
 [hullaah@fedora ~]$
 ```
+
 ## 3-listfiles
+
 File: [3-listfiles](3-listfiles)
+
 - This task involves writing a script that displays current directory content in a long format
-- I used the command ```ls``` with the flag ``` -l```
+- I used the command ```ls``` with the flag ```-l```
 - The ```-l``` flag in the ls command specifies that ls should use a long listing format
 
 It works this way:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ ./3-listfiles 
 total 84
@@ -78,14 +93,18 @@ total 84
 -rwxr-xr-x. 1 hullaah hullaah  752 Sep 27 21:45 school.mgc
 [hullaah@fedora 0x00-shell_basics]$
 ```
+
 ## 4-listmorefiles
+
 File: [4-listmorefiles](4-listmorefiles)
+
 - This task involves writing a script that displays current directory content, including hidden files (starting with `.`), in a long format
-- I used the command ```ls``` with the flag ``` -la```
+- I used the command ```ls``` with the flag ```-la```
 - The ```-l``` flag in the ls command specifies that ls should use a long listing format
 - The `-a` flag specifies that ls should also list hidden files
 
 It works this way:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ ./4-listmorefiles 
 total 84
@@ -114,14 +133,18 @@ drwxr-xr-x. 1 hullaah hullaah 1006 Oct 25 11:17 ..
 -rwxr-xr-x. 1 hullaah hullaah  752 Sep 27 21:45 school.mgc
 [hullaah@fedora 0x00-shell_basics]
 ```
+
 ## 5-listfilesdigitonly
+
 File: [5-listfilesdigitonly](5-listfilesdigitonly)
+
 - This task involves writing a script that displays current directory contents in long format with user and group IDs displayed numerically And hidden files (starting with .)
 - I used the command `ls` with the flags `-na`
 - The `-a` flag specifies that ls should also list hidden files
 - The `-n` flag works like `-l` flag, but lists numeric user and group IDs
 
 It works this way:
+
 ```bash
 [hullaah@fedora 0x00-shell_basics]$ ./5-listfilesdigitonly 
 total 88
@@ -150,29 +173,44 @@ drwxr-xr-x. 1 1000 1000 1006 Oct 25 11:17 ..
 -rwxr-xr-x. 1 1000 1000  752 Sep 27 21:45 school.mgc
 [hullaah@fedora 0x00-shell_basics]$
 ```
+
 ## 6-firstdirectory
+
 File: [6-firstdirectory](6-firstdirectory)
+
 - This task involves writing a script that creates a directory named my_first_directory in the /tmp/ directory
 - I used the `mkdir` command for the task
+
 ## 7-movethatfile
+
 File: [7-movethatfile](7-movethatfile)
+
 - This task involves writing a script that moves the file betty from /tmp/ to /tmp/my_first_directory.
 - I used the `mv` command
 
 ## 8-firstdelete
+
 File: [8-firstdelete](8-firstdelete)
+
 - This task involves writing a script that deletes the file betty from /tmp/my_first_directory
 - I used the `rm` command
+
 ## 9-firstdirdeletion
+
 File: [9-firstdirdeletion](9-firstdirdeletion)
+
 - This task involves writing a script that deletes the directory my_first_directory that is in the /tmp directory.
 - I used the `rmdir` command
+
 ## 10-back
+
 File: [10-back](10-back)
+
 - This task involves writing a script that changes the working directory to the previous one.
 - I used the `cd` command
 
 It works this way:
+
 ```bash
 [hullaah@fedora alx-system_engineering-devops]$ pwd
 /home/hullaah/Documents/ALX/alx-system_engineering-devops
