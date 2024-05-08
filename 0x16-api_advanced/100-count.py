@@ -4,7 +4,7 @@
 import requests
 
 
-def count_words(subreddit: str, word_list, word_counts=None, count=0, after=None):
+def count_words(subreddit, word_list, word_counts=None, count=0, after=None):
     """A function that queries the Reddit API and prints the titles
     of the first 10 hot posts listed for a given subreddit.
 
@@ -32,7 +32,8 @@ def count_words(subreddit: str, word_list, word_counts=None, count=0, after=None
                 if k in x["data"]["title"].lower():
                     word_counts[k] += 1
         count += len(data["children"])
-        sorted_word_counts_keys = sorted(word_counts, key=lambda k: word_counts[k])
+        sorted_word_counts_keys = sorted(
+            word_counts, key=lambda k: word_counts[k])
         if data["after"] is None:
             for x in sorted_word_counts_keys:
                 print(x+":", word_counts[x] * word_list.count(x))
