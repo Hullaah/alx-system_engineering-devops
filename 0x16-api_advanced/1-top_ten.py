@@ -2,7 +2,6 @@
 """This module contains top_ten function
 """
 import requests
-import json
 
 
 def top_ten(subreddit: str):
@@ -19,9 +18,9 @@ def top_ten(subreddit: str):
     url = "https://www.reddit.com/r/" + subreddit + "/hot.json"
     response = requests.get(url, params=payload,
                             headers=headers, allow_redirects=False)
-    try:
-        top_posts = json.loads(response.text)["data"]["children"]
+    if response.status_code == 200:
+        top_posts = response.json()["data"]["children"]
         for x in top_posts:
             print(x["data"]["title"])
-    except KeyError:
+    else:
         print(None)

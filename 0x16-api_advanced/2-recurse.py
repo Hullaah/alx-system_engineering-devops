@@ -2,7 +2,6 @@
 """This module contains recurse function
 """
 import requests
-import json
 
 
 def recurse(subreddit: str, hot_list=[], count=0, after=None):
@@ -23,12 +22,12 @@ def recurse(subreddit: str, hot_list=[], count=0, after=None):
     url = "https://www.reddit.com/r/" + subreddit + "/hot.json"
     response = requests.get(url, params=payload,
                             headers=headers, allow_redirects=False)
-    try:
-        data = json.loads(response.text)["data"]
-        if data["after"] is None:
-            return hot_list
+    if response.status_code == 200:
+        data = response.json()["data"]
         hot_list += [x["data"]["title"] for x in data["children"]]
         count += len(data["children"])
+        if data["after"] is None:
+            return hot_list
         return recurse(subreddit, hot_list, count, data["after"])
-    except KeyError:
+    else:
         return None
