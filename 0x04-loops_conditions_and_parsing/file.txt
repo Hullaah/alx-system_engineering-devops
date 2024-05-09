@@ -1,0 +1,6 @@
+Item	Model	Country	Cost
+1	BMW	Germany	$25000
+2	Volvo	Sweden	$15000
+3	Subaru	Japan	$2500
+4	Ferrari	Italy	$2000000
+5	SAAB	USA	$3000
