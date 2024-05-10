@@ -1,5 +1,5 @@
-# kills the procss killmenow
+# kills a process named killmenow
 exec { 'killmenow':
-  command => 'pkill killmenow',
+  command => ['kill', '-9', 'killmenow'],
   path    => ['/bin', '/usr/bin', '/usr/local/bin'],
 }
